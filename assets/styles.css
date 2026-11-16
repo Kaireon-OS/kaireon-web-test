@@ -21,6 +21,9 @@
   --field-line: color-mix(in srgb, var(--text) 40%, var(--surface));  /* the edge of a field: 3.5:1 */
   --mark: color-mix(in srgb, var(--orange) 25%, transparent);         /* background of a blank */
   --orange-strong: color-mix(in srgb, var(--orange) 85%, var(--text)); /* button under the pointer */
+  --scrim: color-mix(in srgb, var(--page) 65%, transparent);        /* over a photo behind text: white text keeps 4.7:1 on a white pixel */
+  --hairline: color-mix(in srgb, var(--text) 25%, transparent);     /* the fine circle and cross over the hero */
+  --faint: color-mix(in srgb, var(--text) 6%, transparent);         /* the large wordmark in the footer */
 
   /* Capitals in the menu and on buttons. Now off. To turn them on: uppercase and .12em. This is the one place. */
   --caps: none; --caps-spacing: normal;
@@ -107,12 +110,32 @@ p { margin-bottom: var(--space-16); }
 /* Sections: the same distance above each one. */
 .section { padding-top: var(--space-64); }
 main { padding-bottom: var(--space-64); }
-/* clip, not hidden: hidden would make the frame its own scroll box, and the photo drift would measure the frame. */
-.frame { position: relative; margin: var(--space-64) 0 0; aspect-ratio: 16 / 9; overflow: clip; border-radius: 12px; }
-/* The photo lies on top of the frame, so that a taller photo (see the movement below) cannot make the frame taller. */
-.frame img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-/* The mark on a photo with unknown rights: a blank mark in the corner. */
-.frame figcaption { position: absolute; top: var(--space-16); left: var(--space-16); background: var(--page); border-radius: 6px; padding: var(--space-4) var(--space-8); font-size: var(--text-14); }
+/* A photo that fills its box. clip, not hidden: hidden would make the box its own scroll box for the photo drift.
+   The photo lies on top of its box, so that a taller photo (see the movement below) cannot make the box taller. */
+.media { position: relative; overflow: clip; }
+.photo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.photo-mark { position: absolute; z-index: 1; top: var(--space-16); left: var(--space-16); background: var(--page); border-radius: 6px; padding: var(--space-4) var(--space-8); font-size: var(--text-14); }
+
+/* Home. Photo behind text is allowed on this page only (Redmer, 2026-11-16, landing v2), always under the flat scrim. */
+.hero, .band { position: relative; isolation: isolate; overflow: clip; }
+.hero > .media, .band > .media { position: absolute; inset: 0; z-index: -1; }
+.hero .media::after, .band .media::after { content: ''; position: absolute; inset: 0; background: var(--scrim); }
+.hero { min-height: 88svh; display: grid; place-items: center; text-align: center; }
+.hero .wrap { padding-top: var(--space-96); padding-bottom: var(--space-96); }
+.hero h1, .hero .lede { margin-left: auto; margin-right: auto; }
+.hero .lede, .band .cols p { color: var(--text); }
+.lines { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; color: var(--hairline); pointer-events: none; }
+.lines circle, .lines line { fill: none; stroke: currentColor; stroke-width: 1; }
+.story { display: grid; gap: var(--space-48); align-items: start; margin-top: var(--space-32); }
+/* Three photos on a 12 x 12 grid, a little turned, each on top of the one before. */
+.collage { display: grid; grid-template: repeat(12, 1fr) / repeat(12, 1fr); aspect-ratio: 1; width: 100%; max-width: 560px; justify-self: end; }
+.collage .media { border-radius: 8px; }
+.collage .media:nth-child(1) { grid-area: 1 / 1 / 9 / 6; rotate: -4deg; }
+.collage .media:nth-child(2) { grid-area: 3 / 5 / 12 / 10; rotate: 3deg; }
+.collage .media:nth-child(3) { grid-area: 6 / 8 / 13 / 13; rotate: -2deg; }
+.band { margin-top: var(--space-64); }
+.band .wrap { padding-top: var(--space-96); padding-bottom: var(--space-96); }
+.band h3 { font-size: var(--text-24); font-weight: 500; }
 
 /* A row of plain columns. Thin lines part them: above each on a phone, between them on a wide screen. */
 .cols { display: grid; gap: var(--space-24); margin-top: var(--space-48); }
@@ -162,6 +185,8 @@ dd { margin: 0; }
 .site-foot p { margin-bottom: var(--space-8); }
 .site-foot .links a { display: block; text-decoration: none; margin-bottom: var(--space-8); }
 .site-foot .links a:hover { color: var(--text); }
+/* The logo, very large and faint, as decoration at the foot of every page. */
+.wordmark { grid-column: 1 / -1; aspect-ratio: 900 / 225; background: var(--faint); mask: url(img/logo-wit.png) no-repeat center / contain; }
 
 @media (max-width: 520px) {
   .logo img { height: 28px; }
@@ -183,19 +208,22 @@ dd { margin: 0; }
   .phases { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto); grid-auto-flow: column; }
   .contact { grid-template-columns: 2fr 1fr; gap: var(--space-128); }
   .site-foot .wrap { grid-template-columns: 2fr 1fr 1fr; }
+  .story { grid-template-columns: 1fr 1fr; }
+  .band { margin-top: var(--space-128); }
+  .band .wrap { padding-top: var(--space-128); padding-bottom: var(--space-128); }
   .rights, .langs { grid-column: 1 / -1; }
 }
 
 /* Calm movement, only when the visitor allows motion. Without it, everything stands still and shows at once.
    1. Text blocks fade in and rise 12 px, once, as they come into view. The class .motion comes from the script
       in the page head; without the script nothing is hidden.
-   2. The home photo moves a little slower than the page: it is 10% taller than its frame and slides inside it.
+   2. The hero and band photos move a little slower than the page: each is 10% taller than its box and slides in it.
       A browser without scroll-driven animation shows the still photo. */
-@media (prefers-reduced-motion: no-preference) {
-  .motion main .wrap > :not(.frame) { transition: opacity .5s ease-out, translate .5s ease-out; }
-  .motion main .wrap > :not(.frame, .in) { opacity: 0; translate: 0 12px; }
+@media screen and (prefers-reduced-motion: no-preference) {
+  .motion main .wrap > * { transition: opacity .5s ease-out, translate .5s ease-out; }
+  .motion main .wrap > :not(.in) { opacity: 0; translate: 0 12px; }
   @supports (animation-timeline: view()) {
-    .frame img { height: 110%; animation: drift linear both; animation-timeline: view(); }
+    .hero .photo, .band .photo { height: 110%; animation: drift linear both; animation-timeline: view(); }
   }
 }
 @keyframes drift { from { translate: 0 -9%; } to { translate: 0 0; } }

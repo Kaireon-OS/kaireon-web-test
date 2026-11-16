@@ -19,7 +19,7 @@
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('main .wrap > :not(.frame)').forEach(function (el) { seen.observe(el); });
+      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
     });
   }
 </script>
@@ -62,6 +62,7 @@
   <div><p><span class="ph">[telefoon]</span></p><p>office@kaireongroup.com</p><p>Calle Marqués de Montortal 2, Valencia</p></div>
   <div class="links"><a href="/nl/aviso-legal/">Aviso legal</a><a href="/nl/privacy/">Privacyverklaring</a><a href="/nl/cookies/">Cookieverklaring</a></div>
   <p class="rights">© 2026 <span class="ph">[bedrijfsnaam]</span>. CIF <span class="ph">[CIF]</span>. RAICV <span class="ph">[RAICV-nummer]</span>.</p>
+  <div class="wordmark" aria-hidden="true"></div>
   
 </div></footer>
 </body>

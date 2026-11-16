@@ -19,7 +19,7 @@
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('main .wrap > :not(.frame)').forEach(function (el) { seen.observe(el); });
+      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
     });
   }
 </script>
@@ -31,33 +31,43 @@
   <nav><a href="/nl/kopen/">Kopen</a><a href="/nl/beheer/">Beheer</a><a class="btn" href="/nl/contact/">Contact</a></nav>
 </div></header>
 <main>
-
-<section class="section"><div class="wrap">
-  <h1>Een woning kopen aan de Costa Blanca of in Valencia</h1>
-  <p class="lede">Wij staan aan uw kant: van zoekprofiel tot sleutel, uitsluitend namens de koper.</p>
-  <a class="btn" href="/nl/contact/">Plan een kennismaking</a>
-  <figure class="frame"><img src="/assets/img/pexels-audrius-strikaitis-31613974-18771948.jpg" alt="De kust van de Costa Blanca" width="2000" height="1125"></figure>
-</div></section>
+<section class="hero">
+  <div class="media"><img class="photo" src="/assets/img/pexels-audrius-strikaitis-31613974-18771948.jpg" alt="De kust van de Costa Blanca" width="2000" height="1125"></div>
+  <svg class="lines" aria-hidden="true" focusable="false"><circle cx="50%" cy="50%" r="34%"/><line x1="0" y1="50%" x2="100%" y2="50%"/><line x1="50%" y1="0" x2="50%" y2="100%"/></svg>
+  <div class="wrap">
+    <h1>Een woning kopen aan de Costa Blanca of in Valencia</h1>
+    <p class="lede">Wij staan aan uw kant: van zoekprofiel tot sleutel, uitsluitend namens de koper.</p>
+    <a class="btn" href="/nl/contact/">Plan een kennismaking</a>
+  </div>
+</section>
 <section class="section"><div class="wrap">
   <div class="statement"><h2>De makelaar vertegenwoordigt de woning. Wij de koper.</h2> <p>In Spanje werkt de makelaar voor de verkoper.</p></div>
-  <p class="lede">De koper staat er meestal alleen voor, in een land met een andere taal, andere regels en andere kosten. Kaireon vult precies dat gat voor Nederlandse en Belgische kopers. Wij zoeken in de hele markt, bij alle makelaars, onderhandelen in het Spaans en begeleiden u tot en met de notaris.</p>
+  <div class="story">
+    <div>
+      <p class="lede">De koper staat er meestal alleen voor, in een land met een andere taal, andere regels en andere kosten. Kaireon vult precies dat gat voor Nederlandse en Belgische kopers. Wij zoeken in de hele markt, bij alle makelaars, onderhandelen in het Spaans en begeleiden u tot en met de notaris.</p>
+      <a class="link" href="/nl/kopen/">Bekijk de acht fasen</a>
+    </div>
+    <div class="collage"><div class="media"><img class="photo" src="/assets/img/pexels-sofia-marquet-453708414-15551347.jpg" alt="Gevel met een sinaasappelboom" width="1000" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-joaquin-carfagna-3131171-17626763.jpg" alt="Gebouw met een koepel in Valencia" width="844" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-joaquin-carfagna-3131171-17574094.jpg" alt="Straat in Valencia" width="1000" height="1500" loading="lazy"></div></div>
+  </div>
   
 <div class="cols">
   <div><h3>Aan de kant van de koper</h3><p>Wij werken uitsluitend namens de koper.</p></div>
   <div><h3>Nederlands en Spaans</h3><p>Nederlands met u, Spaans met makelaar, bank en notaris.</p></div>
   <div><h3>Van A tot Z</h3><p>Tot en met de notaris, en daarna beheer en verhuur.</p></div>
 </div>
-  <a class="link" href="/nl/kopen/">Bekijk de acht fasen</a>
 </div></section>
-<section class="section"><div class="wrap">
-  <h2>Uw doel bepaalt de zoektocht</h2>
-  
+<section class="band">
+  <div class="media"><img class="photo" src="/assets/img/pexels-thales13-30616146.jpg" alt="Kliffen aan de zee" width="2000" height="1000" loading="lazy"></div>
+  <div class="wrap">
+    <h2>Uw doel bepaalt de zoektocht</h2>
+    
 <div class="cols">
   <div><h3>Tweede woning of pensioen</h3><p>Een vakantie- of pensioenwoning aan de kust.</p></div>
   <div><h3>Belegging</h3><p>Kopen om te verhuren, met beheer via Kaireon.</p></div>
   <div><h3>Emigratie</h3><p>Permanent naar de Costa Blanca of Valencia.</p></div>
 </div>
-</div></section>
+  </div>
+</section>
 
 <section class="section"><div class="wrap">
   <h2>Vertel ons wat u zoekt</h2>
@@ -69,6 +79,7 @@
   <div><p><span class="ph">[telefoon]</span></p><p>office@kaireongroup.com</p><p>Calle Marqués de Montortal 2, Valencia</p></div>
   <div class="links"><a href="/nl/aviso-legal/">Aviso legal</a><a href="/nl/privacy/">Privacyverklaring</a><a href="/nl/cookies/">Cookieverklaring</a></div>
   <p class="rights">© 2026 <span class="ph">[bedrijfsnaam]</span>. CIF <span class="ph">[CIF]</span>. RAICV <span class="ph">[RAICV-nummer]</span>.</p>
+  <div class="wordmark" aria-hidden="true"></div>
   
 </div></footer>
 </body>
