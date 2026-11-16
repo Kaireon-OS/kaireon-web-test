@@ -10,6 +10,19 @@
 <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/styles.css">
 <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+<script>
+  // Calm movement: each text block fades in once as it comes into view. Only when the visitor allows motion and the
+  // browser can do it; otherwise the page never gets the class "motion", and all text shows at once.
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('motion');
+    addEventListener('DOMContentLoaded', function () {
+      var seen = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('main .wrap > :not(.frame)').forEach(function (el) { seen.observe(el); });
+    });
+  }
+</script>
 </head>
 <body>
 <p class="draft">Concept. Nog niet gepubliceerd.</p>
