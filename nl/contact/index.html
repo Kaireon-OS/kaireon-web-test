@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Kaireon Property Group</title>
+<meta name="description" content="Plan een kennismaking met Kaireon Property Group.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="icon" href="/assets/img/favicon.png" type="image/png">
+</head>
+<body>
+<p class="draft">Concept. Nog niet gepubliceerd.</p>
+<header class="site-head"><div class="wrap">
+  <a class="logo" href="/nl/"><img src="/assets/img/logo-wit.png" alt="Kaireon Property Group" width="900" height="226"></a>
+  <nav><a href="/nl/kopen/">Kopen</a><a href="/nl/beheer/">Beheer</a><a class="btn" href="/nl/contact/" aria-current="page">Contact</a></nav>
+</div></header>
+<main>
+
+<section class="section"><div class="wrap">
+  <h1>Plan een kennismaking</h1>
+  <p class="lede">Het eerste gesprek is gratis en vrijblijvend.</p>
+  
+</div></section>
+<section class="section"><div class="wrap contact">
+  <!-- NOT CONNECTED: this form sends nothing and stores nothing. It has no "action" on purpose.
+       Before go-live: give it a destination (see README, "Before go-live") and remove the notice below. -->
+  <form id="intake" novalidate>
+    <label>Naam<input name="naam" autocomplete="name" required></label>
+    <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+    <label>Telefoon<input name="telefoon" type="tel" autocomplete="tel"></label>
+    <label>Waarmee kunnen wij u helpen?<select name="onderwerp"><option value="kopen">Een woning kopen</option><option value="beheer">Beheer en verhuur van mijn appartement</option></select></label>
+    <label>Regio<select name="regio"><option value=""></option><option>Costa Blanca</option><option>Valencia</option><option>Weet ik nog niet</option></select></label>
+    <label>Uw doel<select name="doel"><option value=""></option><option>Tweede woning of pensioen</option><option>Belegging</option><option>Emigratie</option><option>Anders</option></select></label>
+    <label class="wide">Uw bericht<textarea name="bericht" rows="5"></textarea></label>
+    <label class="check wide"><input type="checkbox" name="akkoord" required><span>Ik ga akkoord met de <a href="/nl/privacy/">privacyverklaring</a>.</span></label>
+    <div class="wide"><button class="btn" type="submit">Verstuur</button></div>
+    <p class="wide notice shown" id="intake-notice"><span class="ph">[Concept: dit formulier verzendt nog niets. Uw gegevens zijn niet verstuurd en niet opgeslagen.]</span></p>
+  </form>
+  <aside>
+    <h3>Direct contact</h3>
+    <p><span class="ph">[telefoon]</span></p><p>office@kaireongroup.com</p><p>Calle Marqués de Montortal 2, Valencia</p>
+  </aside>
+</div></section>
+<script>
+  // Draft only: stop the form, so that no data leaves the browser. Replace this when the form gets a destination.
+  var form = document.getElementById('intake');
+  var topic = new URLSearchParams(location.search).get('onderwerp');
+  if (topic) form.elements.onderwerp.value = topic;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('intake-notice').scrollIntoView({ block: 'center' });
+  });
+</script>
+</main>
+<footer class="site-foot"><div class="wrap">
+  <img class="logo" src="/assets/img/logo-wit.png" alt="Kaireon Property Group" width="900" height="226" loading="lazy">
+  <div><p><span class="ph">[telefoon]</span></p><p>office@kaireongroup.com</p><p>Calle Marqués de Montortal 2, Valencia</p></div>
+  <div class="links"><a href="/nl/aviso-legal/">Aviso legal</a><a href="/nl/privacy/">Privacyverklaring</a><a href="/nl/cookies/">Cookieverklaring</a></div>
+  <p class="rights">© 2026 <span class="ph">[bedrijfsnaam]</span>. CIF <span class="ph">[CIF]</span>. RAICV <span class="ph">[RAICV-nummer]</span>.</p>
+  
+</div></footer>
+</body>
+</html>

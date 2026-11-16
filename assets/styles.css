@@ -1,0 +1,185 @@
+/* Kaireon Property Group. Brand colours and font from BRAND_IDENTITY.pdf.
+   One flat page colour, two strengths of text, thin lines, much empty space.
+   Every colour, text size and distance comes from the tokens in :root. `npm run check:tokens` guards that. */
+@font-face {
+  font-family: Montserrat;
+  src: url(fonts/montserrat-latin-wght-normal.woff2) format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  color-scheme: dark;
+  /* Colours: five, no more. */
+  --page: #0F2E32;     /* the page, top to bottom; and the text on the orange button */
+  --surface: #063034;  /* fields and notices */
+  --text: #FFFFFF;
+  --orange: #F18918;   /* the one action, and the marks of a draft */
+  --accent: #69B7C1;   /* links, phase numbers, the focus ring: 6.3:1 on the page */
+  /* The same colours at a fixed strength. */
+  --muted: color-mix(in srgb, var(--text) 65%, var(--page));          /* second-level text: 6.9:1 on the page */
+  --line: color-mix(in srgb, var(--text) 14%, transparent);           /* thin lines between parts */
+  --field-line: color-mix(in srgb, var(--text) 40%, var(--surface));  /* the edge of a field: 3.5:1 */
+  --mark: color-mix(in srgb, var(--orange) 25%, transparent);         /* background of a blank */
+  --orange-strong: color-mix(in srgb, var(--orange) 85%, var(--text)); /* button under the pointer */
+
+  /* Capitals in the menu and on buttons. Now off. To turn them on: uppercase and .12em. This is the one place. */
+  --caps: none; --caps-spacing: normal;
+
+  /* Text sizes: five. */
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-24: 24px;
+  --text-40: 40px;
+  --text-64: 64px;
+
+  /* Distances. */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+  --space-128: 128px;
+  --gutter: clamp(16px, 5vw, 64px); /* the page margin left and right: the one distance that moves with the screen */
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: var(--text-16);
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--page);
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+a, .btn, input, select, textarea { transition: color .15s, background-color .15s, border-color .15s; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 var(--gutter); }
+.wrap.narrow { max-width: 860px; }
+
+/* Text: hierarchy by size and by two strengths. */
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { overflow-wrap: break-word; text-wrap: balance; }
+h1 { font-size: var(--text-40); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; max-width: 16em; margin-bottom: var(--space-24); }
+h2 { font-size: var(--text-24); font-weight: 500; line-height: 1.2; margin-bottom: var(--space-24); }
+h3 { font-size: var(--text-16); font-weight: 600; margin-bottom: var(--space-4); }
+p { margin-bottom: var(--space-16); }
+.lede, .cols p, .phases p, aside p { color: var(--muted); max-width: 40em; margin-bottom: 0; }
+.statement + .lede { margin-top: var(--space-24); }
+/* The statement: large text, the first sentence at full strength and the rest muted. */
+.statement { font-size: var(--text-24); font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; color: var(--muted); max-width: 26em; }
+.statement h2, .statement p { display: inline; font: inherit; margin: 0; }
+.statement h2 { color: var(--text); }
+.link { display: inline-block; margin-top: var(--space-32); color: var(--accent); font-weight: 500; text-decoration: none; }
+.link:hover { text-decoration: underline; }
+
+/* The marks of a draft. Orange on purpose. */
+.ph { background: var(--mark); border-bottom: 1px dashed var(--orange); padding: 0 var(--space-4); }
+.notice { display: none; background: var(--surface); border-left: 4px solid var(--orange); padding: var(--space-16); }
+.notice.shown { display: block; }
+.notice .ph { background: none; border: 0; padding: 0; }
+.draft { margin: 0; padding: var(--space-4) var(--gutter); background: var(--orange); color: var(--page); font-size: var(--text-14); font-weight: 600; text-align: center; }
+
+/* The one action: a small filled pill. */
+.btn {
+  display: inline-block; background: var(--orange); color: var(--page); border: 1px solid var(--orange); border-radius: 999px;
+  font: inherit; font-size: var(--text-14); font-weight: 600; line-height: 20px; text-decoration: none; text-transform: var(--caps); letter-spacing: var(--caps-spacing);
+  padding: var(--space-8) var(--space-16); cursor: pointer;
+}
+.btn:hover { background: var(--orange-strong); border-color: var(--orange-strong); }
+.lede + .btn { margin-top: var(--space-32); }
+
+/* Header: one row with a thin line under it. The contact entry is a pill with a line, not filled. */
+.site-head { border-bottom: 1px solid var(--line); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-16); padding-top: var(--space-16); padding-bottom: var(--space-16); }
+.logo img, img.logo { height: 40px; width: auto; }
+.site-head nav { display: flex; align-items: center; gap: var(--space-32); }
+.site-head nav a { font-size: var(--text-14); color: var(--muted); text-decoration: none; white-space: nowrap; text-transform: var(--caps); letter-spacing: var(--caps-spacing); }
+.site-head nav a:hover, .site-head nav a[aria-current] { color: var(--text); }
+.site-head nav a.btn { background: none; color: var(--text); }
+.site-head nav a.btn:hover { background: var(--orange); color: var(--page); }
+
+/* Sections: the same distance above each one. */
+.section { padding-top: var(--space-64); }
+main { padding-bottom: var(--space-64); }
+.frame { position: relative; margin: var(--space-64) 0 0; }
+.frame img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; }
+/* The mark on a photo with unknown rights: a blank mark in the corner. */
+.frame figcaption { position: absolute; top: var(--space-16); left: var(--space-16); background: var(--page); border-radius: 6px; padding: var(--space-4) var(--space-8); font-size: var(--text-14); }
+
+/* A row of plain columns. Thin lines part them: above each on a phone, between them on a wide screen. */
+.cols { display: grid; gap: var(--space-24); margin-top: var(--space-48); }
+.cols:first-child { margin-top: 0; }
+.cols > div { border-top: 1px solid var(--line); padding-top: var(--space-16); }
+
+/* The eight phases: one list, a thin line above each row. */
+.phases { list-style: none; margin: 0; padding: 0; display: grid; column-gap: var(--space-64); }
+.phases li { display: grid; grid-template-columns: 32px 1fr; align-items: baseline; border-top: 1px solid var(--line); padding: var(--space-16) 0; }
+.phases .n { color: var(--accent); font-weight: 500; }
+
+/* Contact form */
+.contact { display: grid; gap: var(--space-64); }
+form { display: grid; gap: var(--space-24); }
+/* A label is a column: its field sits at the bottom, so that fields in one row stay level when a label takes two lines. */
+label { display: flex; flex-direction: column; justify-content: space-between; font-size: var(--text-14); color: var(--muted); }
+input, select, textarea {
+  display: block; width: 100%; min-height: 44px; margin-top: var(--space-8);
+  font: inherit; font-size: var(--text-16); color: var(--text);
+  background: var(--surface); border: 1px solid var(--field-line); border-radius: 6px; padding: var(--space-8) var(--space-16);
+}
+/* The arrow of a choice list: two lines of the label, no picture. An old browser shows its own arrow. */
+@supports selector(:has(a)) {
+  select { appearance: none; padding-right: var(--space-48); }
+  label:has(select) { position: relative; }
+  label:has(select)::after {
+    content: ''; position: absolute; right: 20px; bottom: 19px; width: 8px; height: 8px;
+    border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); pointer-events: none;
+  }
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+label.check { flex-direction: row; justify-content: flex-start; gap: var(--space-16); align-items: flex-start; font-size: var(--text-16); color: var(--text); }
+label.check input { width: 20px; height: 20px; min-height: 0; margin: var(--space-4) 0 0; flex: none; accent-color: var(--accent); }
+aside p { margin-bottom: var(--space-8); }
+
+/* Legal outlines */
+.narrow h2 { margin-top: var(--space-64); }
+dl { margin: 0; }
+dl div { display: grid; gap: var(--space-4) var(--space-16); align-items: baseline; border-top: 1px solid var(--line); padding: var(--space-16) 0; }
+dt { font-size: var(--text-14); color: var(--muted); }
+dd { margin: 0; }
+
+/* Footer: quiet. */
+.site-foot { border-top: 1px solid var(--line); color: var(--muted); font-size: var(--text-14); }
+.site-foot .wrap { display: grid; gap: var(--space-32); padding-top: var(--space-48); padding-bottom: var(--space-48); }
+.site-foot img.logo { height: 32px; }
+.site-foot p { margin-bottom: var(--space-8); }
+.site-foot .links a { display: block; text-decoration: none; margin-bottom: var(--space-8); }
+.site-foot .links a:hover { color: var(--text); }
+
+@media (max-width: 520px) {
+  .logo img { height: 28px; }
+  .site-head nav { gap: var(--space-16); }
+}
+@media (min-width: 620px) {
+  form { grid-template-columns: 1fr 1fr; }
+  .wide { grid-column: 1 / -1; }
+  dl div { grid-template-columns: 220px 1fr; }
+}
+@media (min-width: 900px) {
+  h1 { font-size: var(--text-64); }
+  .statement { font-size: var(--text-40); line-height: 1.15; }
+  .section { padding-top: var(--space-128); }
+  main { padding-bottom: var(--space-128); }
+  .cols { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 0; }
+  .cols > div { border-top: 0; border-left: 1px solid var(--line); padding: 0 var(--space-32); }
+  .cols > div:first-child { border-left: 0; padding-left: 0; }
+  .phases { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto); grid-auto-flow: column; }
+  .contact { grid-template-columns: 2fr 1fr; gap: var(--space-128); }
+  .site-foot .wrap { grid-template-columns: 2fr 1fr 1fr; }
+  .rights, .langs { grid-column: 1 / -1; }
+}
