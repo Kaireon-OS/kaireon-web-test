@@ -106,6 +106,11 @@ p { margin-bottom: var(--space-16); }
 .site-head nav a:hover, .site-head nav a[aria-current] { color: var(--text); }
 .site-head nav a.btn { background: none; color: var(--text); }
 .site-head nav a.btn:hover { background: var(--orange); color: var(--page); }
+.site-head nav a:not(.btn) { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+/* Home: the header lies over the hero photo, so the photo starts right under the draft bar. It is not sticky:
+   it leaves with the hero. White text on the hero's scrim: 4.7:1 even on a white pixel. */
+.site-head.over { position: absolute; left: 0; right: 0; z-index: 1; }
+.site-head.over nav a { color: var(--text); }
 
 /* Sections: the same distance above each one. */
 .section { padding-top: var(--space-64); }
