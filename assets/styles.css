@@ -22,7 +22,6 @@
   --mark: color-mix(in srgb, var(--orange) 25%, transparent);         /* background of a blank */
   --orange-strong: color-mix(in srgb, var(--orange) 85%, var(--text)); /* button under the pointer */
   --scrim: color-mix(in srgb, var(--page) 65%, transparent);        /* over a photo behind text: white text keeps 4.7:1 on a white pixel */
-  --hairline: color-mix(in srgb, var(--text) 25%, transparent);     /* the fine circle and cross over the hero */
   --faint: color-mix(in srgb, var(--text) 6%, transparent);         /* the large wordmark in the footer */
 
   /* Capitals in the menu and on buttons. Now off. To turn them on: uppercase and .12em. This is the one place. */
@@ -99,8 +98,9 @@ p { margin-bottom: var(--space-16); }
 
 /* Header: one row with a thin line under it. The contact entry is a pill with a line, not filled. */
 .site-head { border-bottom: 1px solid var(--line); }
-.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-16); padding-top: var(--space-16); padding-bottom: var(--space-16); }
+.site-head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-8) var(--space-16); padding-top: var(--space-16); padding-bottom: var(--space-16); }
 .logo img, img.logo { height: 40px; width: auto; }
+.site-head .logo { flex: none; }
 .site-head nav { display: flex; align-items: center; gap: var(--space-32); }
 .site-head nav a { font-size: var(--text-14); color: var(--muted); text-decoration: none; white-space: nowrap; text-transform: var(--caps); letter-spacing: var(--caps-spacing); }
 .site-head nav a:hover, .site-head nav a[aria-current] { color: var(--text); }
@@ -129,8 +129,11 @@ main { padding-bottom: var(--space-64); }
 .hero .wrap { padding-top: var(--space-96); padding-bottom: var(--space-96); }
 .hero h1, .hero .lede { margin-left: auto; margin-right: auto; }
 .hero .lede, .band .cols p { color: var(--text); }
-.lines { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; color: var(--hairline); pointer-events: none; }
-.lines circle, .lines line { fill: none; stroke: currentColor; stroke-width: 1; }
+/* Over ons: a grid of team cards. The photo block is a neutral surface with a blank until a real portrait comes. */
+.team { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-32) var(--space-24); grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.portrait { aspect-ratio: 4 / 5; background: var(--surface); border-radius: 12px; display: grid; place-items: center; margin-bottom: var(--space-16); }
+.member p { color: var(--muted); margin: 0; }
+.member .role { color: var(--text); margin-bottom: var(--space-4); }
 .story { display: grid; gap: var(--space-48); align-items: start; margin-top: var(--space-32); }
 /* Three photos on a 12 x 12 grid, a little turned, each on top of the one before. */
 .collage { display: grid; grid-template: repeat(12, 1fr) / repeat(12, 1fr); aspect-ratio: 1; width: 100%; max-width: 560px; justify-self: end; }
@@ -195,7 +198,10 @@ dd { margin: 0; }
 
 @media (max-width: 520px) {
   .logo img { height: 28px; }
-  .site-head nav { gap: var(--space-16); }
+}
+/* Phones: the full logo and four menu entries do not fit in one row, so the menu takes its own row, spread out. */
+@media (max-width: 600px) {
+  .site-head nav { width: 100%; justify-content: space-between; gap: var(--space-8); }
 }
 @media (min-width: 620px) {
   form { grid-template-columns: 1fr 1fr; }

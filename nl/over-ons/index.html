@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Over ons · Kaireon Property Group</title>
+<meta name="description" content="Over Kaireon Property Group en de mensen met wie u werkt.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="icon" href="/assets/img/favicon.png" type="image/png">
+<script>
+  // Calm movement: each text block fades in once as it comes into view. Only when the visitor allows motion and the
+  // browser can do it; otherwise the page never gets the class "motion", and all text shows at once.
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('motion');
+    addEventListener('DOMContentLoaded', function () {
+      var seen = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
+    });
+  }
+</script>
+</head>
+<body>
+<p class="draft">Concept. Nog niet gepubliceerd.</p>
+<header class="site-head"><div class="wrap">
+  <a class="logo" href="/nl/"><img src="/assets/img/logo-wit.png" alt="Kaireon Property Group" width="900" height="226"></a>
+  <nav><a href="/nl/kopen/">Kopen</a><a href="/nl/beheer/">Beheer</a><a href="/nl/over-ons/" aria-current="page">Over ons</a><a class="btn" href="/nl/contact/">Contact</a></nav>
+</div></header>
+<main>
+
+<section class="section"><div class="wrap">
+  <h1>Over ons</h1>
+  <p class="lede">Wij werken uitsluitend namens de koper.</p>
+  
+</div></section>
+<section class="section"><div class="wrap">
+  <h2>Het team</h2>
+  <ul class="team">
+    <li class="member"><div class="portrait"><span class="ph">[foto]</span></div><h3><span class="ph">[naam]</span></h3><p class="role"><span class="ph">[rol]</span></p><p><span class="ph">[één zin]</span></p></li>
+    <li class="member"><div class="portrait"><span class="ph">[foto]</span></div><h3><span class="ph">[naam]</span></h3><p class="role"><span class="ph">[rol]</span></p><p><span class="ph">[één zin]</span></p></li>
+    <li class="member"><div class="portrait"><span class="ph">[foto]</span></div><h3><span class="ph">[naam]</span></h3><p class="role"><span class="ph">[rol]</span></p><p><span class="ph">[één zin]</span></p></li>
+    <li class="member"><div class="portrait"><span class="ph">[foto]</span></div><h3><span class="ph">[naam]</span></h3><p class="role"><span class="ph">[rol]</span></p><p><span class="ph">[één zin]</span></p></li>
+  </ul>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <h2>Vertel ons wat u zoekt</h2>
+  <a class="btn" href="/nl/contact/">Plan een kennismaking</a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+  <img class="logo" src="/assets/img/logo-wit.png" alt="Kaireon Property Group" width="900" height="226" loading="lazy">
+  <div><p><span class="ph">[telefoon]</span></p><p>office@kaireongroup.com</p><p>Calle Marqués de Montortal 2, Valencia</p></div>
+  <div class="links"><a href="/nl/aviso-legal/">Aviso legal</a><a href="/nl/privacy/">Privacyverklaring</a><a href="/nl/cookies/">Cookieverklaring</a></div>
+  <p class="rights">© 2026 <span class="ph">[bedrijfsnaam]</span>. CIF <span class="ph">[CIF]</span>. RAICV <span class="ph">[RAICV-nummer]</span>.</p>
+  <div class="wordmark" aria-hidden="true"></div>
+  
+</div></footer>
+</body>
+</html>
