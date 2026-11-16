@@ -179,7 +179,7 @@ label.check { flex-direction: row; justify-content: flex-start; gap: var(--space
 label.check input { width: 20px; height: 20px; min-height: 0; margin: var(--space-4) 0 0; flex: none; accent-color: var(--accent); }
 aside p { margin-bottom: var(--space-8); }
 .mail { margin-top: var(--space-32); color: var(--muted); }
-.mail a { color: var(--accent); }
+.mail-link { color: var(--accent); }
 
 /* Legal outlines */
 .narrow h2 { margin-top: var(--space-64); }
