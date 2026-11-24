@@ -71,7 +71,7 @@ h1 { font-size: var(--text-40); font-weight: 500; line-height: 1.05; letter-spac
 h2 { font-size: var(--text-24); font-weight: 500; line-height: 1.2; margin-bottom: var(--space-24); }
 h3 { font-size: var(--text-16); font-weight: 600; margin-bottom: var(--space-4); }
 p { margin-bottom: var(--space-16); }
-.lede, .cols p, .phases p, aside p { color: var(--muted); max-width: 40em; margin-bottom: 0; }
+.lede, .cols p, .rows p, .phases p, aside p { color: var(--muted); max-width: 40em; margin-bottom: 0; }
 .statement + .lede { margin-top: var(--space-24); }
 /* The statement: large text, the first sentence at full strength and the rest muted. */
 .statement { font-size: var(--text-24); font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; color: var(--muted); max-width: 26em; }
@@ -153,6 +153,14 @@ main { padding-bottom: var(--space-64); }
 .cols { display: grid; gap: var(--space-24); margin-top: var(--space-48); }
 .cols:first-child { margin-top: 0; }
 .cols > div { border-top: 1px solid var(--line); padding-top: var(--space-16); }
+
+.cols .link { margin-top: var(--space-16); }
+
+/* A list of rows: a title with its text, a thin line above each row. On a wide screen the title stands left of its text. */
+.rows { display: grid; }
+.rows > div { display: grid; gap: var(--space-4) var(--space-32); border-top: 1px solid var(--line); padding: var(--space-16) 0; }
+.rows h3 { margin-bottom: 0; }
+.lede + .rows { margin-top: var(--space-32); }
 
 /* The eight phases: one list, a thin line above each row. */
 .phases { list-style: none; margin: 0; padding: 0; display: grid; column-gap: var(--space-64); }
@@ -240,6 +248,7 @@ dd { margin: 0; }
   .cols { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 0; }
   .cols > div { border-top: 0; border-left: 1px solid var(--line); padding: 0 var(--space-32); }
   .cols > div:first-child { border-left: 0; padding-left: 0; }
+  .rows > div { grid-template-columns: 1fr 2fr; }
   .phases { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto); grid-auto-flow: column; }
   .contact { grid-template-columns: 2fr 1fr; gap: var(--space-128); }
   .site-foot .wrap { grid-template-columns: 2fr 1fr 1fr; }
