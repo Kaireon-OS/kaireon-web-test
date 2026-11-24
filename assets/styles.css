@@ -262,8 +262,6 @@ dd { margin: 0; }
   .contact { grid-template-columns: 2fr 1fr; gap: var(--space-128); }
   .site-foot .wrap { grid-template-columns: 2fr 1fr 1fr; }
   .story { grid-template-columns: 1fr 1fr; }
-  /* Beside a long list, the collage stays in view while the list scrolls past. */
-  .story .collage { position: sticky; top: var(--space-96); }
   .band { margin-top: var(--space-128); }
   .band .wrap { padding-top: var(--space-128); padding-bottom: var(--space-128); }
   .cover .wrap { padding-bottom: var(--space-96); }
