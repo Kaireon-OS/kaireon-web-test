@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 
 <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=acbb47b1">
+<link rel="stylesheet" href="/assets/styles.css?v=fb7f4632">
 <link rel="icon" href="/assets/img/favicon.png" type="image/png">
 <script>
   // Calm movement: each text block fades in once as it comes into view. Only when the visitor allows motion and the
@@ -19,8 +19,7 @@
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -40px 0px' });
-      // The blocks of text, and each card and photo on its own, so that they come in one by one.
-      document.querySelectorAll('main .wrap > *, main .story > div > *, main .rows > div, main .cols > div, main .collage .media').forEach(function (el) { seen.observe(el); });
+      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
     });
   }
 </script>
@@ -41,15 +40,14 @@
   
 </div></section>
 <section class="section"><div class="wrap">
-<div class="cols">
-  <div><h3>Verhuur</h3><p>Wij verhuren uw appartement voor korte of lange tijd. Bij korte verhuur staat het op Airbnb en Booking.com en kunnen gasten direct boeken. De prijs beweegt elke dag mee met de vraag.</p></div>
-  <div><h3>Gasten</h3><p>Elke gast heeft één aanspreekpunt. De check-in is digitaal, met de verplichte melding bij de politie, en de gast komt binnen zonder sleutel.</p></div>
-  <div><h3>De woning</h3><p>Schoonmaak na elk verblijf en onderhoud wanneer dat nodig is. U krijgt elke maand een afrekening.</p></div>
+<div class="figures">
+  <div><b>24/7</b><p>Wij zijn 24/7 bereikbaar, voor u en voor uw gasten. Op werkdagen reageren wij het snelst.</p></div>
+  <div><b>Elke dag</b><p>Uw appartement staat op Airbnb en Booking.com. De prijs beweegt elke dag mee met de vraag.</p></div>
+  <div><b>Eén</b><p>Elke gast heeft één aanspreekpunt. De check-in is digitaal, met de verplichte melding bij de politie.</p></div>
+  <div><b>Elke maand</b><p>U krijgt elke maand een afrekening met de boekingen, de inkomsten en de kosten.</p></div>
 </div></div></section>
 
 <section class="section"><div class="wrap">
-  <div class="story">
-    <div>
   <h2>Wat beheer inhoudt</h2>
   <p class="lede">U woont niet om de hoek. Wij doen ter plaatse wat nodig is.</p>
 <div class="rows">
@@ -61,13 +59,8 @@
   <div><h3>Administratie</h3><p>De afrekening toont de boekingen, de inkomsten en de kosten. Over huurinkomsten in Spanje doet u daar aangifte. Met de afrekening heeft uw gestor de cijfers daarvoor.</p></div>
   <div><h3>Uw eigen verblijf</h3><p>Wilt u zelf in de woning verblijven? Dan houden wij die periode voor u vrij in de kalender.</p></div>
 </div>
-    </div>
-    <div class="collage"><div class="media"><img class="photo" src="/assets/img/pexels-joaquin-carfagna-3131171-17627454.jpg" alt="Een terras in Valencia" width="2400" height="1600" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-joaquin-carfagna-3131171-17628111.jpg" alt="Een straathoek in Valencia" width="2400" height="1600" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-sofia-marquet-453708414-15551347.jpg" alt="Gevel met een sinaasappelboom" width="1000" height="1500" loading="lazy"></div></div>
-  </div>
 </div></section>
-<section class="band">
-  <div class="media"><img class="photo" src="/assets/img/pexels-audrius-strikaitis-31613974-18771948.jpg" alt="De kust van de Costa Blanca" width="2000" height="1125" loading="lazy"></div>
-  <div class="wrap">
+<section class="section"><div class="wrap">
   <h2>Korte of lange verhuur</h2>
   
 <div class="cols">
@@ -75,9 +68,8 @@
   <div><h3>Lange verhuur</h3><p>Eén huurder voor langere tijd, met een huurcontract en een vaste huur per maand. Wij zoeken en screenen de huurder. In die tijd gebruikt u de woning niet zelf.</p></div>
   <div><h3>Weet u het nog niet?</h3><p>Wij bespreken met u wat past bij de woning, de plek en uw eigen gebruik.</p></div>
 </div>
-  </div>
-</section>
-<section class="section"><div class="wrap">
+</div></section>
+<section class="section alt"><div class="wrap">
   <h2>Veelgestelde vragen</h2>
   
 <div class="rows faq">

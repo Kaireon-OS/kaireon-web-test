@@ -134,8 +134,8 @@ main { padding-bottom: var(--space-64); }
 /* The header lies over the cover, so the text keeps a distance below it. */
 .cover .wrap { width: 100%; padding-top: var(--space-128); padding-bottom: var(--space-64); }
 /* Over ons: a grid of team cards. The photo block is a neutral surface with a blank until a real portrait comes. */
-.team { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-32) var(--space-24); grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
-.portrait { aspect-ratio: 4 / 5; background: var(--surface); border-radius: 12px; display: grid; place-items: center; margin-bottom: var(--space-16); }
+.team { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-32) var(--space-24); grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); }
+.portrait { aspect-ratio: 1; background: var(--surface); border-radius: 12px; display: grid; place-items: center; margin-bottom: var(--space-16); font-size: var(--text-64); font-weight: 500; color: var(--accent); }
 .member p { color: var(--muted); margin: 0; }
 .member .role { color: var(--text); margin-bottom: var(--space-4); }
 .story { display: grid; gap: var(--space-48); align-items: start; margin-top: var(--space-32); }
@@ -166,14 +166,28 @@ main { padding-bottom: var(--space-64); }
 .steps > div { border-top: 2px solid var(--accent); }
 .steps .n { display: block; font-size: var(--text-40); font-weight: 500; line-height: 1; color: var(--accent); margin-bottom: var(--space-16); }
 /* One wide photo between the sections. */
-.strip { margin-top: var(--space-64); }
-.strip .media { aspect-ratio: 4 / 3; border-radius: 12px; }
+/* The other background: every second kind of section, so the page has a rhythm (Redmer, 2026-11-24, on
+   docs/inventory.md: "more visually interesting"). On it, a card takes the page colour. */
+.alt { background: var(--surface); padding-bottom: var(--space-64); margin-top: var(--space-64); }
+.alt .rows > div { background: var(--page); }
+/* Large figures: a short fact in the accent colour, with one line under it. */
+.figures { display: grid; gap: var(--space-32); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.figures b { display: block; font-size: var(--text-40); font-weight: 500; line-height: 1.1; color: var(--accent); margin-bottom: var(--space-8); }
+.figures p { color: var(--muted); margin: 0; }
+/* A comparison: the row titles left, then one column per side; the last column is ours, in white. */
+.compare { width: 100%; border-collapse: collapse; }
+.compare th, .compare td { text-align: left; vertical-align: top; padding: var(--space-16) var(--space-16) var(--space-16) 0; border-top: 1px solid var(--line); }
+.compare thead th { border-top: 0; font-size: var(--text-24); font-weight: 500; }
+.compare thead th:last-child { color: var(--accent); }
+.compare tbody th { font-weight: 500; }
+.compare td { color: var(--muted); }
+.compare td:last-child { color: var(--text); }
 .lede + .rows { margin-top: var(--space-32); }
 
 /* The eight phases: one list, a thin line above each row. */
 .phases { list-style: none; margin: 0; padding: 0; display: grid; column-gap: var(--space-64); }
-.phases li { display: grid; grid-template-columns: 32px 1fr; align-items: baseline; border-top: 1px solid var(--line); padding: var(--space-16) 0; }
-.phases .n { color: var(--accent); font-weight: 500; }
+.phases li { display: grid; grid-template-columns: 64px 1fr; align-items: baseline; border-top: 1px solid var(--line); padding: var(--space-16) 0; }
+.phases .n { color: var(--accent); font-weight: 500; font-size: var(--text-40); line-height: 1; }
 
 /* Contact form */
 .contact { display: grid; gap: var(--space-64); }
@@ -257,7 +271,6 @@ dd { margin: 0; }
   .cols > div { border-top: 0; border-left: 1px solid var(--line); padding: 0 var(--space-32); }
   .cols > div:first-child { border-left: 0; padding-left: 0; }
   .faq { grid-template-columns: 1fr 1fr; }
-  .strip .media { aspect-ratio: 21 / 9; }
   .phases { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto); grid-auto-flow: column; }
   .contact { grid-template-columns: 2fr 1fr; gap: var(--space-128); }
   .site-foot .wrap { grid-template-columns: 2fr 1fr 1fr; }
@@ -276,24 +289,12 @@ dd { margin: 0; }
 @media screen and (prefers-reduced-motion: no-preference) {
   .motion main .wrap > * { transition: opacity .5s ease-out, translate .5s ease-out; }
   .motion main .wrap > :not(.in) { opacity: 0; translate: 0 12px; }
-  /* 3. Cards, columns and collage photos come in one by one (Redmer, 2026-11-24: "more movements"). */
-  .motion main .story > div > *, .motion main .rows > div, .motion main .cols > div, .motion main .collage .media { transition: opacity .6s ease-out, translate .6s ease-out; }
-  .motion main .story > div > :not(.in), .motion main .rows > div:not(.in), .motion main .cols > div:not(.in) { opacity: 0; translate: 0 24px; }
-  .motion main .collage .media:not(.in) { opacity: 0; translate: 0 48px; }
-  .motion main .rows > div:nth-child(3n+2), .motion main .cols > div:nth-child(3n+2), .motion main .collage .media:nth-child(2) { transition-delay: .12s; }
-  .motion main .rows > div:nth-child(3n), .motion main .cols > div:nth-child(3n), .motion main .collage .media:nth-child(3) { transition-delay: .24s; }
-  /* 4. A card rises a little under the pointer. */
-  .motion main .rows > div.in:hover { translate: 0 -4px; transition-delay: 0s; }
-  /* 5. The cover and the hero photo settle in once: they start a little larger. */
+  /* 3. The cover and the hero photo settle in once: they start a little larger. */
   .cover > .media, .hero > .media { animation: settle 1.8s ease-out both; }
   @supports (animation-timeline: view()) {
-    .hero .photo, .band .photo, .cover .photo, .strip .photo { height: 110%; animation: drift linear both; animation-timeline: view(); }
-    /* 6. The three photos of a collage move at different speeds when the page scrolls. */
-    .collage .media { animation: float-near linear both; animation-timeline: view(); }
-    .collage .media:nth-child(2) { animation-name: float-far; }
+    .hero .photo, .band .photo, .cover .photo { height: 110%; animation: drift linear both; animation-timeline: view(); }
   }
 }
 @keyframes drift { from { translate: 0 -9%; } to { translate: 0 0; } }
 @keyframes settle { from { scale: 1.08; } to { scale: 1; } }
-@keyframes float-near { from { transform: translateY(40px); } to { transform: translateY(-40px); } }
-@keyframes float-far { from { transform: translateY(96px); } to { transform: translateY(-96px); } }
+

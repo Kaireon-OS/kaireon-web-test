@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 
 <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=acbb47b1">
+<link rel="stylesheet" href="/assets/styles.css?v=fb7f4632">
 <link rel="icon" href="/assets/img/favicon.png" type="image/png">
 <script>
   // Calm movement: each text block fades in once as it comes into view. Only when the visitor allows motion and the
@@ -19,8 +19,7 @@
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -40px 0px' });
-      // The blocks of text, and each card and photo on its own, so that they come in one by one.
-      document.querySelectorAll('main .wrap > *, main .story > div > *, main .rows > div, main .cols > div, main .collage .media').forEach(function (el) { seen.observe(el); });
+      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
     });
   }
 </script>

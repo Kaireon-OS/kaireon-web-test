@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 
 <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=acbb47b1">
+<link rel="stylesheet" href="/assets/styles.css?v=fb7f4632">
 <link rel="icon" href="/assets/img/favicon.png" type="image/png">
 <script>
   // Calm movement: each text block fades in once as it comes into view. Only when the visitor allows motion and the
@@ -19,8 +19,7 @@
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -40px 0px' });
-      // The blocks of text, and each card and photo on its own, so that they come in one by one.
-      document.querySelectorAll('main .wrap > *, main .story > div > *, main .rows > div, main .cols > div, main .collage .media').forEach(function (el) { seen.observe(el); });
+      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
     });
   }
 </script>
@@ -54,8 +53,6 @@
 </div></section>
 
 <section class="section"><div class="wrap">
-  <div class="story">
-    <div>
   <h2>Wat u zelf regelt</h2>
   <p class="lede">Wij begeleiden elke stap. Deze zaken staan op uw eigen naam.</p>
 <div class="rows">
@@ -63,12 +60,7 @@
   <div><h3>Spaanse bankrekening</h3><p>Via deze rekening betaalt u de koop. Daarna lopen de vaste lasten erover, zoals energie, water en de gemeentebelasting.</p></div>
   <div><h3>Volmacht</h3><p>Kunt u niet zelf naar Spanje komen? Dan kan iemand met een volmacht voor u tekenen. De volmacht regelt u bij een notaris, en u bepaalt zelf waarvoor zij geldt.</p></div>
   <div><h3>Financiering</h3><p>Wilt u een Spaanse hypotheek, dan vraagt de bank stukken over uw inkomen, uw lasten en uw eigen geld. Wij sturen u de lijst met stukken (zie hieronder). Begin hier vroeg mee.</p></div>
-  <div><h3>Uw beslissing</h3><p>U beslist zelf over elke stap: welke woningen u bekijkt, welk bod u doet en of u koopt. Wij doen geen bod en tekenen niets zonder uw schriftelijke opdracht.</p></div>
-  <div><h3>Uw geld</h3><p>Wij ontvangen of beheren nooit geld voor de aankoop. Betaal nooit op basis van alleen een bericht per WhatsApp of e-mail.</p></div>
 </div>
-    </div>
-    <div class="collage"><div class="media"><img class="photo" src="/assets/img/pexels-joaquin-carfagna-3131171-15577493.jpg" alt="Een smalle straat in de oude stad van Valencia" width="937" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-sofia-marquet-453708414-15628594.jpg" alt="Een boog in de oude stad van Valencia" width="1000" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-wijs-wise-136435282-24906253.jpg" alt="Een stadspoort in Valencia" width="1000" height="1500" loading="lazy"></div></div>
-  </div>
 </div></section>
 <section class="section"><div class="wrap">
   <h2>Wat wij controleren</h2>
@@ -81,7 +73,6 @@
   <div><h3>Contracten</h3><p>De reservering, het arrascontract en de koopakte worden beoordeeld voordat u tekent.</p></div>
   <div><h3>Verhuur</h3><p>Wilt u de woning verhuren aan gasten? Dan kijken wij vooraf of dat bij deze woning mogelijk is.</p></div>
 </div>
-  <div class="strip"><div class="media"><img class="photo" src="/assets/img/pexels-thales13-30616146.jpg" alt="Kliffen aan de zee" width="2000" height="1000" loading="lazy"></div></div>
 </div></section>
 <section class="section"><div class="wrap">
   <h2>Een hypotheek in Spanje</h2>
@@ -89,6 +80,7 @@
 <div class="rows">
   <div><h3>De hypotheekscan</h3><p>Wij brengen uw situatie in kaart: de koopsom, uw eigen inbreng en het bedrag dat u wilt lenen. Met uw stukken vragen wij bij meerdere Spaanse banken een principe-akkoord aan. Zo vergelijkt u de banken voordat u tekent.</p></div>
   <div><h3>De stukken</h3><p>U krijgt een lijst met precies de stukken die de banken vragen: wie u bent, uw inkomen, uw lasten en uw eigen geld. Woont u in Nederland, dan hoort uw BKR-overzicht erbij. De stukken over de woning regelen wij.</p></div>
+  <div><h3>Overwaarde</h3><p>Een Spaanse bank financiert niet met de overwaarde van uw woning in Nederland of België. De Spaanse hypotheek rust op de woning die u in Spanje koopt.</p></div>
   <div><h3>Eigen geld</h3><p>De bank financiert de btw (IVA) en de kosten koper niet. Die betaalt u uit uw eigen geld. De bank wil ook weten waar dat geld vandaan komt. Een geleende inbreng nemen de banken niet aan.</p></div>
   <div><h3>Vertalen en taxatie</h3><p>Laat nog niets vertalen: de meeste banken nemen Nederlandse stukken aan zoals ze zijn. De taxatie van de woning volgt pas na het principe-akkoord. Zo maakt u geen kosten voor niets.</p></div>
   <div><h3>Uw beslissing</h3><p>De bank beslist over de hypotheek; u beslist of u het aanbod aanneemt. Dit is een voorbereiding van uw aanvraag, geen financieel advies.</p></div>
@@ -105,15 +97,16 @@
   <div><h3>Daarna, elk jaar</h3><p>Gemeentebelasting (IBI), afvalheffing, een bijdrage aan de vereniging van eigenaren, verzekeringen, nutsvoorzieningen en onderhoud. Woont u niet in Spanje, dan komt de belasting voor niet-ingezetenen erbij.</p></div>
 </div>
 </div></section>
-<section class="section"><div class="wrap">
+<section class="section alt"><div class="wrap">
   <h2>Veelgestelde vragen</h2>
   
 <div class="rows faq">
   <div><h3>Moet ik vaak reizen?</h3><p>Nee. Wij selecteren vooraf en bespreken de selectie online. U reist alleen voor de echte kandidaten.</p></div>
   <div><h3>Ik spreek geen Spaans. Is dat een probleem?</h3><p>Nee. De gesprekken met de makelaar, de bank en de notaris voeren wij voor u. De stukken lichten wij toe in het Nederlands.</p></div>
-  <div><h3>Wie zoekt de woningen?</h3><p>Wij, in de hele markt, samen met een netwerk van makelaars. Vindt u zelf een woning, dan nemen wij die mee in het traject.</p></div>
+  <div><h3>Doet u het papierwerk, of een gestoría?</h3><p>Wij samen. Wij begeleiden de aanvragen voor uw NIE en uw bankrekening en houden alles bij tot de notaris. Een gestor doet de administratieve afhandeling, een onafhankelijke advocaat de juridische controle. Elke specialist stuurt u vooraf een offerte.</p></div>
+  <div><h3>Ik heb al een woning op het oog. Kunt u dan nog helpen?</h3><p>Ja. Ook als u al met een makelaar in gesprek bent, nemen wij de controle, de onderhandeling en de contracten voor u over.</p></div>
   <div><h3>Hoe lang duurt een aankoop?</h3><p>Dat hangt af van de woning, de financiering en uw agenda. Van het eerste gesprek tot de sleutel duurt het meestal 3 tot 5 maanden.</p></div>
-  <div><h3>Wat kost de begeleiding?</h3><p>Na de kennismaking krijgt u een persoonlijk voorstel, met de kosten van onze begeleiding. U beslist daarna of u verder gaat.</p></div>
+  <div><h3>Wat kost de begeleiding?</h3><p>U betaalt een vast tarief. Na de kennismaking krijgt u een persoonlijk voorstel, met de kosten van onze begeleiding. U beslist daarna of u verder gaat.</p></div>
 </div>
 </div></section>
 <section class="section"><div class="wrap">

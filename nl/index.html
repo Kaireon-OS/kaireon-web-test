@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 
 <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=acbb47b1">
+<link rel="stylesheet" href="/assets/styles.css?v=fb7f4632">
 <link rel="icon" href="/assets/img/favicon.png" type="image/png">
 <script>
   // Calm movement: each text block fades in once as it comes into view. Only when the visitor allows motion and the
@@ -19,8 +19,7 @@
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -40px 0px' });
-      // The blocks of text, and each card and photo on its own, so that they come in one by one.
-      document.querySelectorAll('main .wrap > *, main .story > div > *, main .rows > div, main .cols > div, main .collage .media').forEach(function (el) { seen.observe(el); });
+      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
     });
   }
 </script>
@@ -49,12 +48,6 @@
     </div>
     <div class="collage"><div class="media"><img class="photo" src="/assets/img/pexels-sofia-marquet-453708414-15551347.jpg" alt="Gevel met een sinaasappelboom" width="1000" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-joaquin-carfagna-3131171-17626763.jpg" alt="Gebouw met een koepel in Valencia" width="844" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-joaquin-carfagna-3131171-17574094.jpg" alt="Straat in Valencia" width="1000" height="1500" loading="lazy"></div></div>
   </div>
-  
-<div class="cols">
-  <div><h3>Aan de kant van de koper</h3><p>Wij werken uitsluitend namens de koper.</p></div>
-  <div><h3>Nederlands en Spaans</h3><p>Nederlands met u, Spaans met makelaar, bank en notaris.</p></div>
-  <div><h3>Van A tot Z</h3><p>Tot en met de notaris, en daarna beheer en verhuur.</p></div>
-</div>
 </div></section>
 
 <section class="section"><div class="wrap">
@@ -66,28 +59,19 @@
   <div><h3>Ontwikkelen</h3><p>Een pand verbouwen of een andere bestemming geven. Wij begeleiden het project van onderzoek tot oplevering.</p><a class="link" href="/nl/ontwikkelen/">Hoe een project verloopt</a></div>
 </div>
 </div></section>
-<section class="band">
-  <div class="media"><img class="photo" src="/assets/img/pexels-thales13-30616146.jpg" alt="Kliffen aan de zee" width="2000" height="1000" loading="lazy"></div>
-  <div class="wrap">
-    <h2>Uw doel bepaalt de zoektocht</h2>
-    
-<div class="cols">
-  <div><h3>Tweede woning of pensioen</h3><p>Een vakantie- of pensioenwoning aan de kust.</p></div>
-  <div><h3>Belegging</h3><p>Kopen om te verhuren, met beheer via Kaireon.</p></div>
-  <div><h3>Emigratie</h3><p>Permanent naar de Costa Blanca of Valencia.</p></div>
-</div>
-  </div>
-</section>
 
-<section class="section"><div class="wrap">
-  <h2>Zo werkt het</h2>
-  
-<div class="cols">
-  <div><h3>1. Kennismaking</h3><p>Wij bespreken uw wensen, uw doel en uw budget. U weet daarna wat haalbaar is.</p></div>
-  <div><h3>2. Zoeken en screenen</h3><p>Wij zoeken in de hele markt en vragen elke woning vooraf na. U ziet alleen wat past.</p></div>
-  <div><h3>3. Bezichtigen en bieden</h3><p>U reist voor de echte kandidaten. Daarna onderhandelen wij namens u.</p></div>
-  <div><h3>4. Notaris en daarna</h3><p>Wij gaan mee naar de notaris. Na de sleutel regelen wij de nazorg en, als u dat wilt, het beheer.</p></div>
-</div>
+<section class="section alt"><div class="wrap">
+  <h2>De makelaar of Kaireon</h2>
+  <table class="compare">
+    <thead><tr><th scope="col"></th><th scope="col">De makelaar</th><th scope="col">Kaireon</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Werkt voor</th><td>de verkoper</td><td>u, de koper</td></tr>
+      <tr><th scope="row">Wordt betaald door</th><td>de verkoper</td><td>u, met een vast tarief</td></tr>
+      <tr><th scope="row">Zoekt in</th><td>de woningen die hij verkoopt</td><td>de hele markt, bij alle makelaars</td></tr>
+      <tr><th scope="row">Vóór u tekent</th><td>geen controle voor u</td><td>een juridische controle door een onafhankelijke advocaat</td></tr>
+      <tr><th scope="row">Na de koop</th><td>zijn werk is klaar</td><td>nazorg, en als u wilt beheer en verhuur</td></tr>
+    </tbody>
+  </table>
 </div></section>
 
 <section class="section"><div class="wrap">
