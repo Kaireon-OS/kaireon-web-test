@@ -130,8 +130,9 @@ main { padding-bottom: var(--space-64); }
 .hero .wrap { padding-top: var(--space-96); padding-bottom: var(--space-96); }
 .hero h1, .hero .lede { margin-left: auto; margin-right: auto; }
 .hero .lede, .band .cols p, .cover .lede { color: var(--text); }
-.cover { min-height: 85svh; display: grid; align-items: center; }
-.cover .wrap { width: 100%; padding-top: var(--space-64); padding-bottom: var(--space-64); }
+.cover { min-height: 100svh; display: grid; align-items: center; }
+/* The header lies over the cover, so the text keeps a distance below it. */
+.cover .wrap { width: 100%; padding-top: var(--space-128); padding-bottom: var(--space-64); }
 /* Over ons: a grid of team cards. The photo block is a neutral surface with a blank until a real portrait comes. */
 .team { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-32) var(--space-24); grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
 .portrait { aspect-ratio: 4 / 5; background: var(--surface); border-radius: 12px; display: grid; place-items: center; margin-bottom: var(--space-16); }
@@ -245,7 +246,7 @@ dd { margin: 0; }
   .story { grid-template-columns: 1fr 1fr; }
   .band { margin-top: var(--space-128); }
   .band .wrap { padding-top: var(--space-128); padding-bottom: var(--space-128); }
-  .cover .wrap { padding-top: var(--space-96); padding-bottom: var(--space-96); }
+  .cover .wrap { padding-bottom: var(--space-96); }
   .rights, .langs { grid-column: 1 / -1; }
 }
 
