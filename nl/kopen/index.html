@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 
 <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=8f2a4fe1">
+<link rel="stylesheet" href="/assets/styles.css?v=6fdf1fd0">
 <link rel="icon" href="/assets/img/favicon.png" type="image/png">
 <script>
   // Calm movement: each text block fades in once as it comes into view. Only when the visitor allows motion and the
@@ -19,7 +19,8 @@
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
+      // The blocks of text, and each card and photo on its own, so that they come in one by one.
+      document.querySelectorAll('main .wrap > *, main .story > div > *, main .rows > div, main .cols > div, main .collage .media').forEach(function (el) { seen.observe(el); });
     });
   }
 </script>
@@ -53,6 +54,8 @@
 </div></section>
 
 <section class="section"><div class="wrap">
+  <div class="story">
+    <div>
   <h2>Wat u zelf regelt</h2>
   <p class="lede">Wij begeleiden elke stap. Deze zaken staan op uw eigen naam.</p>
 <div class="rows">
@@ -63,6 +66,9 @@
   <div><h3>Uw beslissing</h3><p>U beslist zelf over elke stap: welke woningen u bekijkt, welk bod u doet en of u koopt. Wij doen geen bod en tekenen niets zonder uw schriftelijke opdracht.</p></div>
   <div><h3>Uw geld</h3><p>Wij ontvangen of beheren nooit geld voor de aankoop. Betaal nooit op basis van alleen een bericht per WhatsApp of e-mail.</p></div>
 </div>
+    </div>
+    <div class="collage"><div class="media"><img class="photo" src="/assets/img/pexels-joaquin-carfagna-3131171-15577493.jpg" alt="Een smalle straat in de oude stad van Valencia" width="937" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-sofia-marquet-453708414-15628594.jpg" alt="Een boog in de oude stad van Valencia" width="1000" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-wijs-wise-136435282-24906253.jpg" alt="Een stadspoort in Valencia" width="1000" height="1500" loading="lazy"></div></div>
+  </div>
 </div></section>
 <section class="section"><div class="wrap">
   <h2>Wat wij controleren</h2>

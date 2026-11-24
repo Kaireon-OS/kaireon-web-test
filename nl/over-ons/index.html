@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex, nofollow">
 
 <link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/styles.css?v=8f2a4fe1">
+<link rel="stylesheet" href="/assets/styles.css?v=6fdf1fd0">
 <link rel="icon" href="/assets/img/favicon.png" type="image/png">
 <script>
   // Calm movement: each text block fades in once as it comes into view. Only when the visitor allows motion and the
@@ -19,7 +19,8 @@
       var seen = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
       }, { rootMargin: '0px 0px -40px 0px' });
-      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
+      // The blocks of text, and each card and photo on its own, so that they come in one by one.
+      document.querySelectorAll('main .wrap > *, main .story > div > *, main .rows > div, main .cols > div, main .collage .media').forEach(function (el) { seen.observe(el); });
     });
   }
 </script>
@@ -41,6 +42,8 @@
 </div></section>
 
 <section class="section"><div class="wrap">
+  <div class="story">
+    <div>
   <h2>Waarom Kaireon bestaat</h2>
   
 <div class="rows">
@@ -48,6 +51,9 @@
   <div><h3>Wij kiezen één kant</h3><p>Kaireon vertegenwoordigt geen woningen en geen verkopers. Wij werken voor kopers uit Nederland en België. Makelaars zijn voor ons partners: zij kennen de woningen, wij kennen u.</p></div>
   <div><h3>Ook na de sleutel</h3><p>Een woning in het buitenland vraagt ook daarna zorg. Daarom hoort beheer en verhuur bij ons werk, via Kaireon Property Management. En wie een pand wil verbouwen of herbestemmen, begeleiden wij ook daarbij.</p></div>
 </div>
+    </div>
+    <div class="collage"><div class="media"><img class="photo" src="/assets/img/pexels-sofia-marquet-453708414-15551347.jpg" alt="Gevel met een sinaasappelboom" width="1000" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-sofia-marquet-453708414-15628594.jpg" alt="Een boog in de oude stad van Valencia" width="1000" height="1500" loading="lazy"></div><div class="media"><img class="photo" src="/assets/img/pexels-joaquin-carfagna-3131171-17627454.jpg" alt="Een terras in Valencia" width="2400" height="1600" loading="lazy"></div></div>
+  </div>
 </div></section>
 <section class="section"><div class="wrap">
   <h2>Hoe wij werken</h2>
@@ -58,7 +64,9 @@
   <div><h3>Onafhankelijke specialisten</h3><p>Advocaat, architect, gestor en hypotheekadviseur werken zelfstandig en sturen u vooraf een offerte. U mag ook uw eigen specialist kiezen.</p></div>
 </div>
 </div></section>
-<section class="section"><div class="wrap">
+<section class="band">
+  <div class="media"><img class="photo" src="/assets/img/pexels-thales13-30616146.jpg" alt="Kliffen aan de zee" width="2000" height="1000" loading="lazy"></div>
+  <div class="wrap">
   <h2>Waar wij werken</h2>
   <p class="lede">Weet u nog niet welke streek bij u past? Daarvoor is de verkenningsreis bedoeld.</p>
 <div class="cols">
@@ -66,7 +74,8 @@
   <div><h3>Costa Blanca Noord</h3><p>Onder meer Dénia, Jávea, Moraira, Calpe en Altea.</p></div>
   <div><h3>Costa Blanca Zuid</h3><p>Onder meer Alicante, Santa Pola, Guardamar del Segura, Torrevieja en Orihuela Costa.</p></div>
 </div>
-</div></section>
+  </div>
+</section>
 <section class="section"><div class="wrap">
   <h2>Het team</h2>
   <ul class="team">
