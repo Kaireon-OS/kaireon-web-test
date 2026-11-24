@@ -214,9 +214,14 @@ dd { margin: 0; }
 @media (max-width: 520px) {
   .logo img { height: 28px; }
 }
-/* Phones: the full logo and four menu entries do not fit in one row, so the menu takes its own row, spread out. */
+/* Phones: the logo and five menu entries do not fit in one row. The Contact button stays on the row of the logo, at the
+   right; the four other entries take their own row below it, spread out. */
 @media (max-width: 600px) {
-  .site-head nav { width: 100%; justify-content: space-between; gap: var(--space-8); }
+  .site-head nav { display: contents; }
+  .site-head .wrap { column-gap: var(--space-8); }
+  .site-head .wrap::after { content: ''; flex-basis: 100%; order: 2; }
+  .site-head nav a { order: 3; }
+  .site-head nav a.btn { order: 1; margin-left: auto; }
 }
 @media (min-width: 620px) {
   form { grid-template-columns: 1fr 1fr; }

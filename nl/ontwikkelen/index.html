@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ontwikkelen en herbestemmen · Kaireon Property Group</title>
+<meta name="description" content="Kaireon ontwikkelt en herbestemt panden in Valencia en aan de Costa Blanca, voor de koper.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preload" href="/assets/fonts/montserrat-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="icon" href="/assets/img/favicon.png" type="image/png">
+<script>
+  // Calm movement: each text block fades in once as it comes into view. Only when the visitor allows motion and the
+  // browser can do it; otherwise the page never gets the class "motion", and all text shows at once.
+  if (matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('motion');
+    addEventListener('DOMContentLoaded', function () {
+      var seen = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('main .wrap > *').forEach(function (el) { seen.observe(el); });
+    });
+  }
+</script>
+</head>
+<body>
+<p class="draft">Concept. Nog niet gepubliceerd.</p>
+<header class="site-head"><div class="wrap">
+  <a class="logo" href="/nl/"><img src="/assets/img/logo-wit.png" alt="Kaireon Property Group" width="900" height="226"></a>
+  <nav><a href="/nl/kopen/">Kopen</a><a href="/nl/beheer/">Beheer</a><a href="/nl/ontwikkelen/" aria-current="page">Ontwikkelen</a><a href="/nl/over-ons/">Over ons</a><a class="btn" href="/nl/contact/">Contact</a></nav>
+</div></header>
+<main>
+
+<section class="section"><div class="wrap">
+  <h1>Ontwikkelen en herbestemmen</h1>
+  <p class="lede">Ook bij ontwikkeling staan wij aan de kant van de koper: wij ontwikkelen een pand voor u.</p>
+  
+</div></section>
+<section class="section"><div class="wrap">
+<div class="cols">
+  <div><h3>Herbestemming</h3><p>Een pand krijgt een andere bestemming, bijvoorbeeld een bedrijfsruimte die een woning wordt (cambio de uso).</p></div>
+  <div><h3>Kopen en ontwikkelen</h3><p>Wij zoeken een pand met mogelijkheden en ontwikkelen het voor u.</p></div>
+  <div><h3>Uw eigen pand</h3><p>U heeft al een pand. Wij ontwikkelen het samen met u.</p></div>
+</div></div></section>
+
+<section class="section"><div class="wrap">
+  <h2>Vertel ons over uw plan</h2>
+  <a class="btn" href="/nl/contact/?onderwerp=ontwikkelen">Neem contact op</a>
+</div></section>
+</main>
+<footer class="site-foot"><div class="wrap">
+  <img class="logo" src="/assets/img/logo-wit.png" alt="Kaireon Property Group" width="900" height="226" loading="lazy">
+  <div><p><span class="ph">[telefoon]</span></p><p><a class="mail-link" href="mailto:info@kaireongroup.com">info@kaireongroup.com</a></p><p>Calle Marqués de Montortal 2, Valencia</p></div>
+  <div class="links"><a href="/nl/aviso-legal/">Aviso legal</a><a href="/nl/privacy/">Privacyverklaring</a><a href="/nl/cookies/">Cookieverklaring</a></div>
+  <p class="rights">© 2026 <span class="ph">[bedrijfsnaam]</span>. CIF <span class="ph">[CIF]</span>. RAICV <span class="ph">[RAICV-nummer]</span>.</p>
+  <div class="wordmark" aria-hidden="true"></div>
+  
+</div></footer>
+</body>
+</html>
