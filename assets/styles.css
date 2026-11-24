@@ -177,6 +177,19 @@ input, select, textarea {
 input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
 label.check { flex-direction: row; justify-content: flex-start; gap: var(--space-16); align-items: flex-start; font-size: var(--text-16); color: var(--text); }
 label.check input { width: 20px; height: 20px; min-height: 0; margin: var(--space-4) 0 0; flex: none; accent-color: var(--accent); }
+/* The parts of the intake. A part adds no box of its own: its fields sit in the grid of the form, like the others.
+   Its title is for screen readers only. The towns are the one part with a box: a wide row of tick boxes. */
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: contents; }
+fieldset[hidden] { display: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; padding: 0; }
+.towns { display: grid; gap: var(--space-16); }
+legend { padding: 0; font-size: var(--text-14); color: var(--muted); }
+fieldset p { font-size: var(--text-14); color: var(--text); margin-bottom: 0; }
+/* Tick boxes as small pills, many to a row. */
+.choices { display: flex; flex-wrap: wrap; gap: var(--space-8); margin-top: var(--space-8); }
+.choices label { flex-direction: row; align-items: center; gap: var(--space-8); color: var(--text); border: 1px solid var(--field-line); border-radius: 999px; padding: var(--space-4) var(--space-16); cursor: pointer; }
+.choices input { width: 16px; height: 16px; min-height: 0; margin: 0; accent-color: var(--accent); }
+.choices label:has(:checked) { border-color: var(--accent); }
 aside p { margin-bottom: var(--space-8); }
 .mail { margin-top: var(--space-32); color: var(--muted); }
 .mail-link { color: var(--accent); }

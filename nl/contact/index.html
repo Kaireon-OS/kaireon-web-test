@@ -34,7 +34,7 @@
 
 <section class="section"><div class="wrap">
   <h1>Plan een kennismaking</h1>
-  <p class="lede">Het eerste gesprek is gratis en vrijblijvend.</p>
+  <p class="lede">Het eerste gesprek is gratis en vrijblijvend. Wij nemen binnen 1 werkdag contact met u op.</p>
   
 </div></section>
 <section class="section"><div class="wrap contact">
@@ -45,26 +45,71 @@
     <label>Naam<input name="naam" autocomplete="name" required></label>
     <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
     <label>Telefoon<input name="telefoon" type="tel" autocomplete="tel"></label>
-    <label>Waarmee kunnen wij u helpen?<select name="onderwerp"><option value="kopen">Een woning kopen</option><option value="beheer">Beheer en verhuur van mijn appartement</option></select></label>
-    <label>Regio<select name="regio"><option value=""></option><option>Costa Blanca</option><option>Valencia</option><option>Weet ik nog niet</option></select></label>
-    <label>Uw doel<select name="doel"><option value=""></option><option>Tweede woning of pensioen</option><option>Belegging</option><option>Emigratie</option><option>Anders</option></select></label>
+    <label>Waarmee kunnen wij u helpen?<select name="onderwerp"><option value="kopen">Een woning kopen</option><option value="beheer">Beheer en verhuur van mijn appartement</option><option value="ontwikkelen">Een pand ontwikkelen of herbestemmen</option></select></label>
+    
+    <fieldset data-when="onderwerp=kopen"><legend class="sr">Uw zoektocht</legend>
+      <label>Regio<select name="regio"><option value=""></option><option>Costa Blanca</option><option>Valencia</option><option>Weet ik nog niet</option></select></label>
+      <label>Uw doel<select name="doel"><option value=""></option><option>Tweede woning of pensioen</option><option>Belegging</option><option>Emigratie</option><option>Anders</option></select></label>
+      <fieldset class="wide towns" data-when="regio=Costa Blanca"><legend>Welke plaatsen hebben uw interesse?</legend>
+        <div><p>Costa Blanca Noord</p><div class="choices"><label><input type="checkbox" name="plaatsen" value="Dénia">Dénia</label><label><input type="checkbox" name="plaatsen" value="Jávea (Xàbia)">Jávea (Xàbia)</label><label><input type="checkbox" name="plaatsen" value="Moraira">Moraira</label><label><input type="checkbox" name="plaatsen" value="El Poble Nou de Benitatxell">El Poble Nou de Benitatxell</label><label><input type="checkbox" name="plaatsen" value="Benissa">Benissa</label><label><input type="checkbox" name="plaatsen" value="Calpe">Calpe</label><label><input type="checkbox" name="plaatsen" value="Altea">Altea</label><label><input type="checkbox" name="plaatsen" value="Albir / L'Alfàs del Pi">Albir / L'Alfàs del Pi</label><label><input type="checkbox" name="plaatsen" value="La Nucía">La Nucía</label><label><input type="checkbox" name="plaatsen" value="Polop">Polop</label><label><input type="checkbox" name="plaatsen" value="Finestrat">Finestrat</label><label><input type="checkbox" name="plaatsen" value="Benidorm">Benidorm</label><label><input type="checkbox" name="plaatsen" value="La Vila Joiosa">La Vila Joiosa</label><label><input type="checkbox" name="plaatsen" value="Callosa d'en Sarrià">Callosa d'en Sarrià</label><label><input type="checkbox" name="plaatsen" value="Pedreguer">Pedreguer</label><label><input type="checkbox" name="plaatsen" value="Gata de Gorgos">Gata de Gorgos</label><label><input type="checkbox" name="plaatsen" value="Ondara">Ondara</label><label><input type="checkbox" name="plaatsen" value="Els Poblets">Els Poblets</label><label><input type="checkbox" name="plaatsen" value="El Verger">El Verger</label><label><input type="checkbox" name="plaatsen" value="Orba">Orba</label><label><input type="checkbox" name="plaatsen" value="Pego">Pego</label><label><input type="checkbox" name="plaatsen" value="Xaló (Jalón)">Xaló (Jalón)</label><label><input type="checkbox" name="plaatsen" value="Alcalalí">Alcalalí</label><label><input type="checkbox" name="plaatsen" value="Parcent">Parcent</label><label><input type="checkbox" name="plaatsen" value="Lliber">Lliber</label></div></div>
+        <div><p>Costa Blanca Zuid</p><div class="choices"><label><input type="checkbox" name="plaatsen" value="Alicante">Alicante</label><label><input type="checkbox" name="plaatsen" value="Santa Pola">Santa Pola</label><label><input type="checkbox" name="plaatsen" value="Gran Alacant">Gran Alacant</label><label><input type="checkbox" name="plaatsen" value="Guardamar del Segura">Guardamar del Segura</label><label><input type="checkbox" name="plaatsen" value="Torrevieja">Torrevieja</label><label><input type="checkbox" name="plaatsen" value="La Mata">La Mata</label><label><input type="checkbox" name="plaatsen" value="Ciudad Quesada / Rojales">Ciudad Quesada / Rojales</label><label><input type="checkbox" name="plaatsen" value="San Miguel de Salinas">San Miguel de Salinas</label><label><input type="checkbox" name="plaatsen" value="Los Montesinos">Los Montesinos</label><label><input type="checkbox" name="plaatsen" value="Algorfa">Algorfa</label><label><input type="checkbox" name="plaatsen" value="Benijófar">Benijófar</label><label><input type="checkbox" name="plaatsen" value="Punta Prima">Punta Prima</label><label><input type="checkbox" name="plaatsen" value="Orihuela Costa">Orihuela Costa</label><label><input type="checkbox" name="plaatsen" value="Playa Flamenca">Playa Flamenca</label><label><input type="checkbox" name="plaatsen" value="La Zenia">La Zenia</label><label><input type="checkbox" name="plaatsen" value="Cabo Roig">Cabo Roig</label><label><input type="checkbox" name="plaatsen" value="Campoamor">Campoamor</label><label><input type="checkbox" name="plaatsen" value="Villamartín">Villamartín</label><label><input type="checkbox" name="plaatsen" value="Pilar de la Horadada">Pilar de la Horadada</label><label><input type="checkbox" name="plaatsen" value="Torre de la Horadada">Torre de la Horadada</label></div></div>
+      </fieldset>
+      <label>Nieuwbouw of een bestaande woning?<select name="staat"><option value=""></option><option>Nieuwbouw</option><option>Bestaande woning</option><option>Geen voorkeur</option></select></label>
+      <label>Type woning<select name="type"><option value=""></option><option>Appartement</option><option>Penthouse (ático)</option><option>Villa</option><option>Vrijstaande woning (chalet)</option><option>Rijwoning (adosado)</option><option>Bungalow</option><option>Weet ik nog niet</option></select></label>
+      <label>Indicatief budget<select name="budget"><option value=""></option><option>Tot € 200.000</option><option>€ 200.000 tot € 400.000</option><option>€ 400.000 tot € 600.000</option><option>€ 600.000 tot € 1.000.000</option><option>Meer dan € 1.000.000</option><option>Weet ik nog niet</option></select></label>
+      <label>Financiering<select name="financiering"><option value=""></option><option>Eigen middelen</option><option>Hypotheek in Spanje</option><option>Eigen middelen en hypotheek</option><option>Weet ik nog niet</option></select></label>
+      <fieldset data-when="financiering=Hypotheek in Spanje"><label>Wilt u hulp bij de hypotheek?<select name="hypotheek"><option value=""></option><option>Ja, graag</option><option>Nee, nu nog niet</option></select></label></fieldset>
+      <label>Wanneer wilt u kopen?<select name="tijdlijn"><option value=""></option><option>Binnen 3 maanden</option><option>Binnen 3 tot 6 maanden</option><option>Binnen 6 tot 12 maanden</option><option>Ik oriënteer me nog</option></select></label>
+    </fieldset>
+    <fieldset data-when="onderwerp=beheer"><legend class="sr">Uw appartement</legend>
+      <label>Waar staat de woning?<select name="locatie"><option value=""></option><option>Valencia</option><option>Costa Blanca</option><option>Andere regio</option></select></label>
+      <label>Plaats<input name="plaats"></label>
+      <label>Type woning<select name="woningtype"><option value=""></option><option>Appartement</option><option>Penthouse (ático)</option><option>Villa</option><option>Vrijstaande woning (chalet)</option><option>Rijwoning (adosado)</option><option>Bungalow</option></select></label>
+      <label>Welke verhuur overweegt u?<select name="verhuur"><option value=""></option><option>Korte verhuur aan gasten</option><option>Lange verhuur</option><option>Weet ik nog niet</option></select></label>
+      <fieldset data-when="verhuur=Korte verhuur aan gasten"><label>Heeft de woning al een toeristische vergunning (VUT)?<select name="vut"><option value=""></option><option>Ja</option><option>Nee</option><option>Weet ik nog niet</option></select></label></fieldset>
+      <label>Is de woning ingericht?<select name="inrichting"><option value=""></option><option>Ja, helemaal</option><option>Voor een deel</option><option>Nee, ik wil hulp bij de inrichting</option></select></label>
+      <label>Welke hulp zoekt u?<select name="hulp"><option value=""></option><option>Volledig beheer</option><option>Alleen verhuur en gasten</option><option>Eerst een gesprek</option></select></label>
+    </fieldset>
+    <fieldset data-when="onderwerp=ontwikkelen"><legend class="sr">Uw project</legend>
+      <label>Waar gaat uw interesse naar uit?<select name="interesse"><option value=""></option><option>Een pand een andere bestemming geven (cambio de uso)</option><option>Een pand kopen en ontwikkelen</option><option>Mijn eigen pand ontwikkelen</option></select></label>
+      <label>Heeft u al een pand of een locatie?<select name="pand"><option value=""></option><option>Ja</option><option>Nee, nog niet</option></select></label>
+      <fieldset data-when="pand=Ja"><label>Waar is het pand, en wat is het?<input name="pandomschrijving"></label></fieldset>
+      <label>Indicatief investeringsbedrag<select name="investering"><option value=""></option><option>Tot € 50.000</option><option>€ 50.000 tot € 100.000</option><option>€ 100.000 tot € 250.000</option><option>€ 250.000 tot € 500.000</option><option>Meer dan € 500.000</option><option>Weet ik nog niet</option></select></label>
+      <label>Welk rendement verwacht u?<select name="rendement"><option value=""></option><option>Tot 10%</option><option>10% tot 15%</option><option>15% tot 20%</option><option>Meer dan 20%</option><option>Weet ik nog niet</option></select></label>
+      <label>Wanneer wilt u beginnen?<select name="tijdlijn"><option value=""></option><option>Binnen 3 maanden</option><option>Binnen 3 tot 6 maanden</option><option>Binnen 6 tot 12 maanden</option><option>Ik oriënteer me nog</option></select></label>
+    </fieldset>
+    <label>Land<select name="land"><option value=""></option><option>Nederland</option><option>België</option><option>Anders</option></select></label>
+    <label>Hoe wilt u contact?<select name="voorkeur"><option value=""></option><option>Telefoon</option><option>E-mail</option><option>WhatsApp</option><option>Videogesprek</option></select></label>
     <label class="wide">Uw bericht<textarea name="bericht" rows="5"></textarea></label>
     <label class="check wide"><input type="checkbox" name="akkoord" required><span>Ik ga akkoord met de <a href="/nl/privacy/">privacyverklaring</a>.</span></label>
     <div class="wide"><button class="btn" type="submit">Verstuur</button></div>
     <p class="wide notice shown" id="intake-notice"><span class="ph">[Concept: dit formulier verzendt nog niets. Uw gegevens zijn niet verstuurd en niet opgeslagen.]</span></p>
   </form>
-  <p class="mail">Of mail naar <a class="mail-link" href="mailto:office@kaireongroup.com">office@kaireongroup.com</a>.</p>
+  <p class="mail">Of mail naar <a class="mail-link" href="mailto:info@kaireongroup.com">info@kaireongroup.com</a>.</p>
   </div>
   <aside>
     <h3>Direct contact</h3>
-    <p><span class="ph">[telefoon]</span></p><p><a class="mail-link" href="mailto:office@kaireongroup.com">office@kaireongroup.com</a></p><p>Calle Marqués de Montortal 2, Valencia</p>
+    <p><span class="ph">[telefoon]</span></p><p><a class="mail-link" href="mailto:info@kaireongroup.com">info@kaireongroup.com</a></p><p>Calle Marqués de Montortal 2, Valencia</p>
+    <p>Beheer: <a class="mail-link" href="mailto:owners@kaireongroup.com">owners@kaireongroup.com</a></p><p>Ontwikkelen: <a class="mail-link" href="mailto:development@kaireongroup.com">development@kaireongroup.com</a></p>
   </aside>
 </div></section>
 <script>
-  // Draft only: stop the form, so that no data leaves the browser. Replace this when the form gets a destination.
   var form = document.getElementById('intake');
   var topic = new URLSearchParams(location.search).get('onderwerp');
   if (topic) form.elements.onderwerp.value = topic;
+  // Show a part only when its condition holds. A hidden part is switched off, so that its answers are not sent.
+  function sync() {
+    form.querySelectorAll('[data-when]').forEach(function (part) {
+      var rule = part.getAttribute('data-when').split('=');
+      var field = form.elements[rule[0]];
+      var on = field.value === rule[1] && !field.matches(':disabled');
+      part.hidden = !on;
+      part.disabled = !on;
+    });
+  }
+  form.addEventListener('change', sync);
+  sync();
+  // Draft only: stop the form, so that no data leaves the browser. Replace this when the form gets a destination.
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     document.getElementById('intake-notice').scrollIntoView({ block: 'center' });
@@ -73,7 +118,7 @@
 </main>
 <footer class="site-foot"><div class="wrap">
   <img class="logo" src="/assets/img/logo-wit.png" alt="Kaireon Property Group" width="900" height="226" loading="lazy">
-  <div><p><span class="ph">[telefoon]</span></p><p><a class="mail-link" href="mailto:office@kaireongroup.com">office@kaireongroup.com</a></p><p>Calle Marqués de Montortal 2, Valencia</p></div>
+  <div><p><span class="ph">[telefoon]</span></p><p><a class="mail-link" href="mailto:info@kaireongroup.com">info@kaireongroup.com</a></p><p>Calle Marqués de Montortal 2, Valencia</p></div>
   <div class="links"><a href="/nl/aviso-legal/">Aviso legal</a><a href="/nl/privacy/">Privacyverklaring</a><a href="/nl/cookies/">Cookieverklaring</a></div>
   <p class="rights">© 2026 <span class="ph">[bedrijfsnaam]</span>. CIF <span class="ph">[CIF]</span>. RAICV <span class="ph">[RAICV-nummer]</span>.</p>
   <div class="wordmark" aria-hidden="true"></div>
