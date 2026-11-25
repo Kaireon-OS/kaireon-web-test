@@ -202,6 +202,17 @@ main { padding-bottom: var(--space-64); }
 .drawing .unit { fill: var(--accent); fill-opacity: .35; stroke: var(--accent); stroke-width: 2; }
 .drawing .street { stroke: var(--text); stroke-width: 2; }
 .drawing .off { fill: var(--text); fill-opacity: .1; stroke: var(--line); stroke-width: 2; stroke-dasharray: 4 4; }
+.drawing .arrow { stroke: var(--accent); stroke-width: 3; }
+.drawing .head, .drawing .door { fill: var(--accent); }
+.drawing .cross { stroke: var(--text); stroke-width: 3; }
+.drawing .ring { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 6; }
+.drawing .sea { fill: var(--accent); fill-opacity: .15; }
+.drawing .coast { fill: none; stroke: var(--accent); stroke-width: 2; }
+.drawing .town { fill: var(--text); }
+.drawing .office { fill: var(--accent); stroke: var(--text); stroke-width: 2; }
+.drawing text.soft { fill: var(--muted); }
+.drawing text.region { fill: var(--accent); font-weight: 600; }
+.drawing.map svg { max-width: 380px; }
 /* Large figures: a short fact in the accent colour, with one line under it. */
 .figures { display: grid; gap: var(--space-32); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
 .figures b { display: block; font-size: var(--text-40); font-weight: 500; line-height: 1.1; color: var(--accent); margin-bottom: var(--space-8); }
