@@ -170,6 +170,19 @@ main { padding-bottom: var(--space-64); }
    docs/inventory.md: "more visually interesting"). On it, a card takes the page colour. */
 .alt { background: var(--surface); padding-bottom: var(--space-64); margin-top: var(--space-64); }
 .alt .rows > div { background: var(--page); }
+/* A drawing of two units seen from above (Ontwikkelen): daylight in the accent colour, the rest of the unit dark.
+   Two columns on a wide screen, one under the other on a phone, so the words in the drawing stay readable. */
+.diagram { display: grid; gap: var(--space-32); grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); margin: var(--space-32) 0; }
+.diagram > div { background: var(--surface); border-radius: 12px; padding: var(--space-24); }
+.diagram svg { display: block; width: 100%; max-width: 360px; height: auto; margin: var(--space-16) auto; }
+.diagram .unit { fill: var(--page); stroke: var(--line); stroke-width: 2; }
+.diagram .light { fill: var(--accent); fill-opacity: .35; }
+.diagram .facade { stroke: var(--accent); stroke-width: 6; }
+.diagram text { fill: var(--text); font-size: var(--text-14); font-family: inherit; }
+.diagram .verdict { font-size: var(--text-24); font-weight: 500; margin: 0; }
+.diagram p { color: var(--muted); margin: 0; }
+.diagram p.verdict { color: var(--text); }
+.diagram > div:last-child p.verdict { color: var(--accent); }
 /* Large figures: a short fact in the accent colour, with one line under it. */
 .figures { display: grid; gap: var(--space-32); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
 .figures b { display: block; font-size: var(--text-40); font-weight: 500; line-height: 1.1; color: var(--accent); margin-bottom: var(--space-8); }
