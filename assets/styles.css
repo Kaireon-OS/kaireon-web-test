@@ -170,19 +170,38 @@ main { padding-bottom: var(--space-64); }
    docs/inventory.md: "more visually interesting"). On it, a card takes the page colour. */
 .alt { background: var(--surface); padding-bottom: var(--space-64); margin-top: var(--space-64); }
 .alt .rows > div { background: var(--page); }
-/* A drawing of two units seen from above (Ontwikkelen): daylight in the accent colour, the rest of the unit dark.
-   Two columns on a wide screen, one under the other on a phone, so the words in the drawing stay readable. */
-.diagram { display: grid; gap: var(--space-32); grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); margin: var(--space-32) 0; }
+/* A drawing of three units seen from above (Ontwikkelen): daylight in the accent colour, the rest of the unit dark.
+   Side by side on a wide screen, one under the other on a phone, so the words in the drawing stay readable. */
+.diagram { display: grid; gap: var(--space-32); grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); margin: var(--space-32) 0; }
 .diagram > div { background: var(--surface); border-radius: 12px; padding: var(--space-24); }
 .diagram svg { display: block; width: 100%; max-width: 360px; height: auto; margin: var(--space-16) auto; }
 .diagram .unit { fill: var(--page); stroke: var(--line); stroke-width: 2; }
 .diagram .light { fill: var(--accent); fill-opacity: .35; }
 .diagram .facade { stroke: var(--accent); stroke-width: 6; }
-.diagram text { fill: var(--text); font-size: var(--text-14); font-family: inherit; }
 .diagram .verdict { font-size: var(--text-24); font-weight: 500; margin: 0; }
 .diagram p { color: var(--muted); margin: 0; }
 .diagram p.verdict { color: var(--text); }
-.diagram > div:last-child p.verdict { color: var(--accent); }
+.diagram p.verdict.good { color: var(--accent); }
+.diagram .patio { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 6; }
+/* A single drawing with its caption (Redmer, 2026-11-25: "if they are possible on more things do it"). The same shapes
+   as the daylight drawing: the accent colour is ours and light, the surface is the frame, faint white is your own money. */
+.drawing { background: var(--surface); border-radius: 12px; padding: var(--space-24); margin: var(--space-32) 0; }
+.alt .drawing { background: var(--page); }
+.drawing svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto var(--space-16); }
+.drawing figcaption { color: var(--muted); max-width: 40em; margin: 0 auto; text-align: center; }
+.drawing text, .diagram text { fill: var(--text); font-size: var(--text-14); font-family: inherit; }
+.drawing text.strong { font-weight: 600; }
+.drawing .box { fill: var(--page); stroke: var(--line); stroke-width: 2; }
+.alt .drawing .box { fill: var(--surface); }
+.drawing .box.ours, .drawing .link.ours { stroke: var(--accent); }
+.drawing .link { stroke: var(--line); stroke-width: 2; }
+.drawing .to { stroke: var(--line); stroke-width: 2; stroke-dasharray: 4 4; }
+.drawing .bank { fill: var(--accent); fill-opacity: .35; }
+.drawing .own, .drawing .stay, .drawing .ground { fill: var(--text); fill-opacity: .1; }
+.drawing .stay { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 4 4; }
+.drawing .unit { fill: var(--accent); fill-opacity: .35; stroke: var(--accent); stroke-width: 2; }
+.drawing .street { stroke: var(--text); stroke-width: 2; }
+.drawing .off { fill: var(--text); fill-opacity: .1; stroke: var(--line); stroke-width: 2; stroke-dasharray: 4 4; }
 /* Large figures: a short fact in the accent colour, with one line under it. */
 .figures { display: grid; gap: var(--space-32); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
 .figures b { display: block; font-size: var(--text-40); font-weight: 500; line-height: 1.1; color: var(--accent); margin-bottom: var(--space-8); }
